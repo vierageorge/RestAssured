@@ -15,7 +15,7 @@ public class MyFirstTest {
 
 		given()
 			.expect()
-			.statusCode(201)
+			.statusCode(200)
 			.when()
 			.get("http://localhost:8085/student/list");
 
@@ -26,8 +26,9 @@ public class MyFirstTest {
 	void getSingleCSStudent() {
 		Response response =
 		given()
-			.queryParam("programme", "Computer Science")
-			.queryParam("limit", 1)
+//			.queryParam("programme", "Computer Science")
+//			.queryParam("limit", 1)
+			.queryParams("programme", "Computer Science","limit", 1)
 			.when()
 			.get("http://localhost:8085/student/list");
 		
