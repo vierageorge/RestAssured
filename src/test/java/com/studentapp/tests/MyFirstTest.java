@@ -13,10 +13,10 @@ public class MyFirstTest {
 	void getAllStudents() {
 		
 		RestAssured.given()
+			.expect()
+			.statusCode(201)
 			.when()
-			.get("http://localhost:8085/student/list")
-			.then()
-			.statusCode(200);
+			.get("http://localhost:8085/student/list");
 		
 	}
 }
