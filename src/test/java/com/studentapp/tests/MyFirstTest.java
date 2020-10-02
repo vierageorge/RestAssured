@@ -1,5 +1,6 @@
 package com.studentapp.tests;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -44,5 +45,17 @@ public class MyFirstTest {
 		
 		response.prettyPrint();
 			
+	}
+	
+	@DisplayName("Get the first student")
+	@Test
+	void getTheFirstStudent() {
+		Response response =
+		given()
+			.pathParam("id", 2)
+			.when()
+			.get("http://localhost:8085/student/{id}");
+		
+		response.prettyPrint();
 	}
 }
