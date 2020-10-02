@@ -1,6 +1,5 @@
 package com.studentapp.tests;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +10,7 @@ import static io.restassured.RestAssured.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MyFirstTest {
+public class StudentGetRequestTests extends TestBase {
 
 	@DisplayName("Getting all the students from the database")
 	@Test
@@ -21,7 +20,7 @@ public class MyFirstTest {
 			.expect()
 			.statusCode(200)
 			.when()
-			.get("http://localhost:8085/student/list");
+			.get("/list");
 
 	}
 	
@@ -41,7 +40,7 @@ public class MyFirstTest {
 //			.queryParams("programme", "Computer Science","limit", 1)
 			.queryParams(params)
 			.when()
-			.get("http://localhost:8085/student/list");
+			.get("/list");
 		
 		response.prettyPrint();
 			
@@ -54,7 +53,7 @@ public class MyFirstTest {
 		given()
 			.pathParam("id", 2)
 			.when()
-			.get("http://localhost:8085/student/{id}");
+			.get("/{id}");
 		
 		response.prettyPrint();
 	}
