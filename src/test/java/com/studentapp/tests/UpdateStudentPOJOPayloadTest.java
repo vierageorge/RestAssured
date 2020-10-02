@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UpdateStudentPOJOPayloadTest extends TestBase {
-	@DisplayName("Create a new student by sending payload as an object")
+	@DisplayName("Update a student resource with put")
 	@Test
 	void updateStudent() {
 		
